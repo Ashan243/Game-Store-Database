@@ -1,0 +1,50 @@
+
+
+
+
+Refresh Tokens
+
+- A refresht token is a jwt token that allows users to obtain acces when their old access token expires.
+  It is designed to allow users to remain authenticated without needing to log in again
+
+1. Long Shelf life (months, days, weeks)
+2. Not used directly for accessing protected resource
+
+
+//How it works
+//THE Refresh token gets sent to the server to request a new token
+
+// Server generate a access token and refresh token
+//access token = API access
+//Uusually without a refresh token the jwt tokenholder will have their token deleted and then when they log in angain
+ =// It will create the token
+ //When the token expires, client side sends refresh token to the server
+ //The server validate the refresh token if everything checks out then it will send a new access token and even a new refresh token
+
+ //Why use refresh Tokens
+ 1. We allow for smooth user experience while maintaining security by Limit the acccess 
+
+
+ //Cookies Storage and attributes
+
+ 1.  HttpOnly - This cookie cannot be access via Jsavasript on the client
+ 2.  Secure  - This cookie will only be sent by HTTPS connections
+ 3.  SameSite - Restricts when cookes are sent with cross-site requests 
+   a. None  - Cookes are sent with all request, but requires the secure attribute to work
+   b. Lax - Cookies are sent with first-party and some cross-site request (clicking on link to other page)
+   c. Strict - Cookies are only sent in the first-party requests (not with requests initated by other sites) - 
+         (Helps to prevent cross-site request forgety (CSRF))
+
+    
+Domain - Specfics the domain where the cookie accessible (Allow the cookes to be shared across subdomain)
+///www.ashthedev.com/
+    //app.ashan
+    //Domain=www.ashthedev.com, subdomain=app.ashthedev.com
+
+5. Path - Specifics the URL path that must exist for the cookie to be sent
+//Limit the scope of cooke by using the url path
+//Path=/admin the cookie is only sent with requests to /admin or subpaths like /admin/profile
+
+
+Expires - Specfies the data and time when the cookie will expires//session_id=123, Expires=Wed, 10 Dec 2024 1:00:00 GMT
+Max-Age - Specfies the cookie's lifetime in seconds from the moment it was set (ime in) /session_id123, Max-Age=6000
