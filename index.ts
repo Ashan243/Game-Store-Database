@@ -4,6 +4,13 @@ import staffRoutes from "./Routes/staffRoutes"
 import { ConnectDB } from "./Utils/dbconnection" 
 import express from "express"
 
+
+/**
+ * 
+ * 
+ * @copyright By Ashan Griffith Mundle, github www.github.com/Ashan243
+ * @description Game Store API for handling gaming services
+ */
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))

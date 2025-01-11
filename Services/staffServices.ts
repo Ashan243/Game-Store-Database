@@ -7,6 +7,8 @@ type staffAuth = Partial<Staff>
 type staffAuthInterface = Pick<staffAuth, "email" | "password" | "role"> & {updated?: string}
 
 
+
+
 export class StaffServices{
 
 
