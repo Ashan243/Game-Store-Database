@@ -1,0 +1,8 @@
+
+
+
+local branch change or creation of new branch if it doesn't exist - git checkout -b (name of the branch)
+Switch branch without creating a new one = git checkout (name of the existing branch)
+modify a branch name - git branch -m (prev branch) (new branch name)
+
+//Your local branch name needs to the same as your github remote branch name
