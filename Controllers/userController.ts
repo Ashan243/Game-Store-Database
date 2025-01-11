@@ -4,7 +4,7 @@ import { verifyToken, generateToken } from "../Services/tokenServices"
 import _ from "lodash"
 
 
-export const createUser = async(req:Request, res:Response, next:NextFunction) =>{
+export const createUser = async(req:Request, res:Response) =>{
     try {
         const user = await UserService.createUser(req.body)
         //Create JWT token and refresh Token
@@ -28,7 +28,9 @@ export const createUser = async(req:Request, res:Response, next:NextFunction) =>
             //DO NOT SEND THE REFRESH TOKEN AS RESPONSE VIA the json object area
         }})
     } catch (error) {
-        next()
+        if(error instanceof Error){
+            throw new Error(`Error attempting to create a new user: ${error.message}`)
+        }
     }
 }
 

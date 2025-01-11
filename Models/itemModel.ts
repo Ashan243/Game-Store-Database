@@ -15,7 +15,7 @@ export interface Item extends Document{
 
 
 
-export const itemSchema = new mongoose.Schema<item>({
+export const itemSchema = new mongoose.Schema<Item>({
 
     itemId:{
         type: Number,
@@ -40,4 +40,4 @@ export const itemSchema = new mongoose.Schema<item>({
 
 
 
-export const itemModel = mongoose.model<item>("itemModel", itemSchema )
+export const itemModel = mongoose.model<Item>("itemModel", itemSchema )
